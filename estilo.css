@@ -1,0 +1,882 @@
+```css
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #080b14;
+    color: #eee;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   BARRA DE NAVEGACIÓN
+========================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(5, 8, 16, 0.92);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 30px;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 5px;
+
+    color: #d4af37;
+
+    text-shadow:
+        0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+
+/* MENÚ */
+
+.menu {
+    list-style: none;
+
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    color: #eee;
+    text-decoration: none;
+
+    font-size: 15px;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #d4af37;
+
+    text-shadow:
+        0 0 10px rgba(212, 175, 55, 0.6);
+}
+
+
+/* =========================================
+   INICIO / HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 20px 60px;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(27, 48, 85, 0.5),
+            transparent 60%
+        ),
+        linear-gradient(
+            180deg,
+            #101a30,
+            #080b14
+        );
+}
+
+
+/* EFECTO DE ESTRELLAS */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px);
+
+    background-size: 80px 80px;
+
+    opacity: 0.25;
+
+    pointer-events: none;
+}
+
+
+.hero-contenido {
+    position: relative;
+    z-index: 2;
+
+    max-width: 800px;
+}
+
+
+/* TEXTO SUPERIOR */
+
+.subtitulo {
+    color: #d4af37;
+
+    letter-spacing: 7px;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+/* TÍTULO */
+
+.hero h1 {
+    font-size: clamp(80px, 15vw, 180px);
+
+    line-height: 0.8;
+
+    letter-spacing: 15px;
+
+    color: #d4af37;
+
+    text-shadow:
+        0 0 10px rgba(212,175,55,0.4),
+        0 0 30px rgba(212,175,55,0.2);
+}
+
+
+.hero h2 {
+    font-size: clamp(25px, 5vw, 50px);
+
+    letter-spacing: 12px;
+
+    color: white;
+
+    margin: 25px 0;
+}
+
+
+.hero p {
+    max-width: 600px;
+
+    margin: 0 auto 35px;
+
+    color: #c7cad3;
+
+    font-size: 18px;
+}
+
+
+/* BOTÓN */
+
+.boton {
+    display: inline-block;
+
+    padding: 13px 30px;
+
+    border: 1px solid #d4af37;
+
+    color: #d4af37;
+
+    text-decoration: none;
+
+    letter-spacing: 3px;
+
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background: #d4af37;
+
+    color: #080b14;
+
+    box-shadow:
+        0 0 20px rgba(212,175,55,0.5);
+}
+
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.seccion {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 30px;
+}
+
+
+.seccion h2 {
+    text-align: center;
+
+    font-size: 42px;
+
+    color: #d4af37;
+
+    margin-bottom: 20px;
+
+    letter-spacing: 3px;
+}
+
+
+.seccion > p {
+    max-width: 800px;
+
+    margin: 0 auto 20px;
+
+    text-align: center;
+
+    color: #c7cad3;
+}
+
+
+.intro-seccion {
+    margin-bottom: 50px !important;
+}
+
+
+/* =========================================
+   SAGAS
+========================================= */
+
+.sagas-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 25px;
+
+    margin-top: 50px;
+}
+
+
+.saga {
+    position: relative;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #121a2b,
+            #0b101d
+        );
+
+    border: 1px solid rgba(212,175,55,0.25);
+
+    border-radius: 8px;
+
+    transition: 0.35s;
+}
+
+
+.saga:hover {
+    transform: translateY(-8px);
+
+    border-color: #d4af37;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.5),
+        0 0 20px rgba(212,175,55,0.1);
+}
+
+
+.saga h3 {
+    color: #d4af37;
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+
+.saga p {
+    color: #b9bdc8;
+
+    margin-bottom: 20px;
+}
+
+
+.saga ol {
+    padding-left: 22px;
+
+    color: #ddd;
+}
+
+
+.saga li {
+    padding: 5px 0;
+}
+
+
+.saga li::marker {
+    color: #d4af37;
+}
+
+
+/* =========================================
+   PERSONAJES
+========================================= */
+
+.personajes-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 30px;
+
+    margin-top: 50px;
+}
+
+
+.personaje-card {
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #121a2b,
+            #090d18
+        );
+
+    border: 1px solid rgba(212,175,55,0.25);
+
+    border-radius: 10px;
+
+    transition: 0.35s;
+}
+
+
+.personaje-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #d4af37;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.6);
+}
+
+
+/* IMAGEN */
+
+.personaje-card > img {
+    width: 100%;
+
+    height: 350px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.4s;
+}
+
+
+.personaje-card:hover > img {
+    transform: scale(1.04);
+}
+
+
+/* INFORMACIÓN */
+
+.personaje-info {
+    padding: 25px;
+}
+
+
+.personaje-info h3 {
+    color: #d4af37;
+
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+
+.personaje-info p {
+    color: #c6c9d2;
+
+    margin-bottom: 12px;
+}
+
+
+.personaje-info strong {
+    color: #fff;
+}
+
+
+.personaje-info h4 {
+    color: #d4af37;
+
+    margin-top: 20px;
+
+    margin-bottom: 8px;
+}
+
+
+.personaje-info ul {
+    padding-left: 20px;
+
+    color: #bfc3cd;
+}
+
+
+.personaje-info li {
+    margin-bottom: 5px;
+}
+
+
+/* =========================================
+   MÚSICA
+========================================= */
+
+.musica-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+
+    margin-top: 50px;
+}
+
+
+.album {
+    background:
+        linear-gradient(
+            145deg,
+            #121a2b,
+            #090d18
+        );
+
+    border: 1px solid rgba(212,175,55,0.25);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.album > h3 {
+    padding: 22px 25px;
+
+    color: #d4af37;
+
+    font-size: 25px;
+
+    background: rgba(212,175,55,0.06);
+
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+}
+
+
+/* CANCIÓN */
+
+.cancion {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 18px 25px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+
+    transition: 0.3s;
+}
+
+
+.cancion:last-child {
+    border-bottom: none;
+}
+
+
+.cancion:hover {
+    background: rgba(212,175,55,0.05);
+}
+
+
+/* NÚMERO */
+
+.cancion > span {
+    min-width: 35px;
+
+    color: #d4af37;
+
+    font-size: 14px;
+}
+
+
+/* INFORMACIÓN */
+
+.cancion h4 {
+    color: #eee;
+
+    font-size: 18px;
+}
+
+
+.cancion p {
+    color: #888e9b;
+
+    font-size: 14px;
+}
+
+
+/* BOTÓN YOUTUBE */
+
+.cancion a {
+    margin-left: auto;
+
+    padding: 7px 15px;
+
+    border: 1px solid #8d2424;
+
+    color: #ff7777;
+
+    text-decoration: none;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+
+.cancion a:hover {
+    background: #8d2424;
+
+    color: white;
+
+    box-shadow:
+        0 0 15px rgba(255,70,70,0.3);
+}
+
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+footer {
+    text-align: center;
+
+    padding: 50px 20px;
+
+    background: #05070d;
+
+    border-top: 1px solid rgba(212,175,55,0.2);
+
+    color: #777d89;
+}
+
+
+footer p {
+    margin: 5px;
+}
+
+
+footer p:first-child {
+    color: #d4af37;
+
+    font-size: 20px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .menu {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .menu a {
+        font-size: 13px;
+    }
+
+
+    .seccion {
+        padding: 80px 20px;
+    }
+
+
+    .seccion h2 {
+        font-size: 34px;
+    }
+
+
+    .cancion {
+        flex-wrap: wrap;
+    }
+
+
+    .cancion a {
+        margin-left: 0;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        letter-spacing: 7px;
+    }
+
+
+    .hero h2 {
+        letter-spacing: 5px;
+    }
+
+
+    .personaje-card > img {
+        height: 280px;
+    }
+
+
+    .cancion {
+        gap: 10px;
+
+        padding: 15px;
+    }
+
+}
+```
+.sagas-container,
+.personajes-container,
+.musica-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 40px;
+}
+
+/* =========================
+   TARJETAS DE SAGAS
+   ========================= */
+
+.saga {
+    height: 220px;
+    padding: 20px;
+    background: linear-gradient(145deg, #121a2b, #090d18);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.saga:hover {
+    transform: translateY(-6px);
+    border-color: #d4af37;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.saga h3 {
+    color: #d4af37;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.saga p {
+    color: #b9bdc8;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.saga ol {
+    padding-left: 20px;
+    color: #ddd;
+    font-size: 12px;
+}
+
+.saga li {
+    padding: 2px 0;
+}
+
+
+/* =========================
+   TARJETAS DE PERSONAJES
+   ========================= */
+
+.personaje-card {
+    background: linear-gradient(145deg, #121a2b, #090d18);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.personaje-card:hover {
+    transform: translateY(-6px);
+    border-color: #d4af37;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.personaje-card > img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.personaje-info {
+    padding: 15px;
+}
+
+.personaje-info h3 {
+    color: #d4af37;
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.personaje-info p {
+    color: #c6c9d2;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.personaje-info h4 {
+    color: #d4af37;
+    font-size: 15px;
+    margin-top: 12px;
+}
+
+.personaje-info ul {
+    padding-left: 18px;
+    color: #bfc3cd;
+    font-size: 12px;
+}
+
+
+/* =========================
+   TARJETAS DE CANCIONES
+   ========================= */
+
+.album {
+    background: linear-gradient(145deg, #121a2b, #090d18);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.album > h3 {
+    padding: 15px;
+    color: #d4af37;
+    font-size: 20px;
+    background: rgba(212,175,55,0.06);
+}
+
+.cancion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.cancion > span {
+    color: #d4af37;
+    font-size: 12px;
+    min-width: 25px;
+}
+
+.cancion h4 {
+    color: #eee;
+    font-size: 14px;
+}
+
+.cancion p {
+    color: #888e9b;
+    font-size: 11px;
+}
+
+.cancion a {
+    margin-left: auto;
+    padding: 5px 8px;
+    border: 1px solid #8d2424;
+    color: #ff7777;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 10px;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1000px) {
+    .sagas-container,
+    .personajes-container,
+    .musica-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
+    .sagas-container,
+    .personajes-container,
+    .musica-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .sagas-container,
+    .personajes-container,
+    .musica-container {
+        grid-template-columns: 1fr;
+    }
+}
